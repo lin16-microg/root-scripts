@@ -40,7 +40,7 @@ case "$1" in
     ;;   
 esac
 
-#switch_zpatch $BRANCH1 R
+switch_zpatch $BRANCH1 R
 
 switch_branches $BRANCH1 frameworks/base
 switch_branches $BRANCH1 frameworks/native
@@ -59,5 +59,5 @@ switch_branches $BRANCH1 packages/apps/Settings
 switch_branches $BRANCH1 vendor/lineage
 switch_branches $BRANCH1 .repo/local_manifests
 
-#switch_zpatch $BRANCH1 $PATCHV
+switch_zpatch $BRANCH1 S
 

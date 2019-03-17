@@ -49,7 +49,7 @@ switch_branches $BRANCH1 frameworks/native
 #switch_branches $BRANCH1 packages/apps/Dialer
 #switch_branches $BRANCH2 packages/apps/Eleven
 #switch_branches $BRANCH2 packages/apps/LockClock
-#switch_branches $BRANCH1 packages/apps/Jelly
+switch_branches $BRANCH1 packages/apps/Jelly
 switch_branches $BRANCH1 packages/apps/Settings
 #switch_branches $BRANCH1 packages/apps/SetupWizard
 #switch_branches $BRANCH1 packages/apps/Trebuchet

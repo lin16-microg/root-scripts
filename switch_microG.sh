@@ -32,7 +32,7 @@ case "$1" in
     BRANCH1="lineage-16.0"
     ;;
   *) 
-    echo "usage: switch_microg.sh default | microG | reference"
+    echo "usage: switch_microg.sh default | microG"
     echo "-"
     echo "  default   - LineageOS 16.0"
     echo "  microG    - hardened microG build"

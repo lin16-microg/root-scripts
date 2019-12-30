@@ -45,7 +45,7 @@ switch_zpatch $BRANCH1 R
 switch_branches $BRANCH1 frameworks/base
 switch_branches $BRANCH1 frameworks/native
 #switch_branches $BRANCH1 kernel/oneplus/msm8996/
-#switch_branches $BRANCH1 packages/apps/Camera2
+switch_branches $BRANCH1 packages/apps/Camera2
 switch_branches $BRANCH1 packages/apps/Dialer
 #switch_branches $BRANCH2 packages/apps/Eleven
 #switch_branches $BRANCH2 packages/apps/LockClock

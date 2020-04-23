@@ -5,7 +5,7 @@ switch_branches() {
   cd $2
   echo "-"
   echo "$PWD"
-  git checkout $1
+  git checkout $1 && git pull github $1
   cd $TOPDIR
 }
 
@@ -74,6 +74,7 @@ switch_branches $BRANCH3 packages/apps/Dialer
 switch_branches $BRANCH3 packages/apps/Jelly
 switch_branches $BRANCH1 packages/apps/LineageParts
 switch_branches $BRANCH1 packages/apps/Settings
+switch_branches $BRANCH3 packages/services/Telecomm
 switch_branches $BRANCH2 packages/services/Telephony
 switch_branches $BRANCH2 system/bt
 switch_branches $BRANCH1 system/core

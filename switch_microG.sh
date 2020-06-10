@@ -55,7 +55,7 @@ case "$1" in
     echo "  default   - LineageOS 16.0"
     echo "  microG    - hardened microG build"
     echo "  treble    - Treble GSI build"
-    echo "  reference - 100% LineageOS 15.1 (no patches - for 'repo sync')"
+    echo "  reference - 100% LineageOS 16.0 (no patches - for 'repo sync')"
     exit
     ;;   
 esac

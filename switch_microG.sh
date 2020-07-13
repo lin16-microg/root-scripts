@@ -29,24 +29,28 @@ case "$1" in
     BRANCH1="lin-16.0-treble"
     BRANCH2="lin-16.0-treble"
     BRANCH3="lin-16.0-microG"
+    BRANCH4="lin-16.0-microG"
     PATCHV="S"
     ;;
   microG) 
     BRANCH1="lin-16.0-microG"
     BRANCH2="lineage-16.0"
     BRANCH3="lin-16.0-microG"
+    BRANCH4="lin-16.0-microG"
     PATCHV="S"
     ;;
   default) 
     BRANCH1="lineage-16.0"
     BRANCH2="lineage-16.0"
     BRANCH3="lineage-16.0"
+    BRANCH4="lineage-16.0"
     PATCHV="S"
     ;;
   reference) 
     BRANCH1="lineage-16.0"
     BRANCH2="lineage-16.0"
     BRANCH3="lineage-16.0"
+    BRANCH4="changelog"
     PATCHV="N"
     ;;
   *) 
@@ -84,6 +88,7 @@ switch_branches $BRANCH2 system/vold
 switch_branches $BRANCH1 vendor/lineage
 switch_branches $BRANCH2 vendor/qcom/opensource/cryptfs_hw
 switch_branches $BRANCH1 .repo/local_manifests
+switch_branches $BRANCH4 OTA
 
 switch_zpatch $BRANCH1 $PATCHV
 

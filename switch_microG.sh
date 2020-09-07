@@ -73,6 +73,7 @@ switch_branches $BRANCH1 frameworks/base
 switch_branches $BRANCH1 frameworks/native
 switch_branches $BRANCH2 frameworks/opt/net/wifi
 switch_branches $BRANCH2 frameworks/opt/telephony
+switch_branches $BRANCH2 lineage-sdk
 switch_branches $BRANCH3 packages/apps/Camera2
 switch_branches $BRANCH3 packages/apps/Dialer
 switch_branches $BRANCH3 packages/apps/Jelly

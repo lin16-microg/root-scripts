@@ -81,7 +81,7 @@ switch_branches $BRANCH1 packages/apps/LineageParts
 switch_branches $BRANCH1 packages/apps/Settings
 switch_branches $BRANCH3 packages/services/Telecomm
 switch_branches $BRANCH2 packages/services/Telephony
-switch_branches $BRANCH2 system/bt
+switch_branches $BRANCH1 system/bt
 switch_branches $BRANCH1 system/core
 switch_branches $BRANCH2 system/netd
 switch_branches $BRANCH1 system/sepolicy

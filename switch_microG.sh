@@ -66,14 +66,15 @@ esac
 
 switch_zpatch $BRANCH1 R
 
+switch_branches $BRANCH1 bionic
 switch_branches $BRANCH1 build/make
 switch_branches $BRANCH2 external/selinux
 switch_branches $BRANCH2 frameworks/av
 switch_branches $BRANCH1 frameworks/base
 switch_branches $BRANCH1 frameworks/native
-switch_branches $BRANCH2 frameworks/opt/net/wifi
+switch_branches $BRANCH1 frameworks/opt/net/wifi
 switch_branches $BRANCH2 frameworks/opt/telephony
-switch_branches $BRANCH2 lineage-sdk
+switch_branches $BRANCH1 lineage-sdk
 switch_branches $BRANCH3 packages/apps/Dialer
 switch_branches $BRANCH3 packages/apps/Jelly
 switch_branches $BRANCH1 packages/apps/LineageParts

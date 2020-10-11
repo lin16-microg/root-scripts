@@ -66,7 +66,7 @@ esac
 
 switch_zpatch $BRANCH1 R
 
-switch_branches $BRANCH1 bionic
+switch_branches $BRANCH2 bionic
 switch_branches $BRANCH1 build/make
 switch_branches $BRANCH2 external/selinux
 switch_branches $BRANCH2 frameworks/av

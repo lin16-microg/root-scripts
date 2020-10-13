@@ -30,6 +30,8 @@ case "$1" in
     BRANCH2="lin-16.0-treble"
     BRANCH3="lin-16.0-microG"
     BRANCH4="lin-16.0-microG"
+    BRANCH5="lin-16.0-treble"
+    BRANCHZ="$BRANCH1"
     PATCHV="S"
     ;;
   microG) 
@@ -37,6 +39,17 @@ case "$1" in
     BRANCH2="lineage-16.0"
     BRANCH3="lin-16.0-microG"
     BRANCH4="lin-16.0-microG"
+    BRANCH5="lin-16.0-microG"
+    BRANCHZ="$BRANCH1"
+    PATCHV="S"
+    ;;
+  mG-3.4) 
+    BRANCH1="lin-16.0-microG"
+    BRANCH2="lineage-16.0"
+    BRANCH3="lin-16.0-microG"
+    BRANCH4="lin-16.0-microG"
+    BRANCH5="lineage-16.0"
+    BRANCHZ="lin-16.0-mG-3.4"
     PATCHV="S"
     ;;
   default) 
@@ -44,6 +57,8 @@ case "$1" in
     BRANCH2="lineage-16.0"
     BRANCH3="lineage-16.0"
     BRANCH4="lineage-16.0"
+    BRANCH5="lineage-16.0"
+    BRANCHZ="$BRANCH1"
     PATCHV="S"
     ;;
   reference) 
@@ -51,22 +66,25 @@ case "$1" in
     BRANCH2="lineage-16.0"
     BRANCH3="lineage-16.0"
     BRANCH4="changelog"
+    BRANCH5="lineage-16.0"
+    BRANCHZ="$BRANCH1"
     PATCHV="N"
     ;;
   *) 
-    echo "usage: switch_microg.sh default | microG | treble | reference"
+    echo "usage: switch_microg.sh default | microG | mG-3.4 | treble | reference"
     echo "-"
     echo "  default   - LineageOS 16.0"
     echo "  microG    - hardened microG build"
+    echo "  mG-3.4    - hardened microG build for 3.4 kernels"
     echo "  treble    - Treble GSI build"
     echo "  reference - 100% LineageOS 16.0 (no patches - for 'repo sync')"
     exit
     ;;   
 esac
 
-switch_zpatch $BRANCH1 R
+switch_zpatch $BRANCHZ R
 
-switch_branches $BRANCH2 bionic
+switch_branches $BRANCH5 bionic
 switch_branches $BRANCH1 build/make
 switch_branches $BRANCH2 external/selinux
 switch_branches $BRANCH2 frameworks/av
@@ -91,5 +109,5 @@ switch_branches $BRANCH2 vendor/qcom/opensource/cryptfs_hw
 switch_branches $BRANCH1 .repo/local_manifests
 switch_branches $BRANCH4 OTA
 
-switch_zpatch $BRANCH1 $PATCHV
+switch_zpatch $BRANCHZ $PATCHV
 

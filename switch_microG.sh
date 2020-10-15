@@ -52,6 +52,15 @@ case "$1" in
     BRANCHZ="lin-16.0-mG-3.4"
     PATCHV="S"
     ;;
+  mG-3.10) 
+    BRANCH1="lin-16.0-microG"
+    BRANCH2="lineage-16.0"
+    BRANCH3="lin-16.0-microG"
+    BRANCH4="lin-16.0-microG"
+    BRANCH5="$BRANCH1"
+    BRANCHZ="lin-16.0-mG-3.10"
+    PATCHV="S"
+    ;;  
   default) 
     BRANCH1="lineage-16.0"
     BRANCH2="lineage-16.0"
@@ -71,11 +80,12 @@ case "$1" in
     PATCHV="N"
     ;;
   *) 
-    echo "usage: switch_microg.sh default | microG | mG-3.4 | treble | reference"
+    echo "usage: switch_microg.sh default | microG | mG-3.4 | mG-3.10 | treble | reference"
     echo "-"
     echo "  default   - LineageOS 16.0"
     echo "  microG    - hardened microG build"
     echo "  mG-3.4    - hardened microG build for 3.4 kernels"
+    echo "  mG-3.10   - hardened microG build for 3.10 kernels"
     echo "  treble    - Treble GSI build"
     echo "  reference - 100% LineageOS 16.0 (no patches - for 'repo sync')"
     exit

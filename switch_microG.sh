@@ -1,11 +1,31 @@
 #!/bin/bash
 
+#
+# Switch script to switch/checkout to the defined branches
+# for each build variant and to apply the respective patches
+#
+# After initial `repo sync`, the branches are initially
+# created and checked out
+# ------------------------------------------------------------
+
+
 switch_branches() {
   TOPDIR=$PWD
   cd $2
   echo "-"
   echo "$PWD"
-  git checkout $1 && git pull github $1
+  if [ "$2" == ".repo/local_manifests" ] ; then
+    REMOTE="origin"
+  else
+    REMOTE="github"
+  fi
+  if [ -n "$(git branch --list $1)" ]; then
+    git checkout $1
+    git pull $REMOTE $1
+  else
+    git fetch $REMOTE $1
+    git checkout -b $1 $REMOTE/$1
+  fi
   cd $TOPDIR
 }
 
@@ -16,7 +36,8 @@ switch_zpatch() {
   echo "$PWD"
   case "$2" in 
     R) ./patches_reverse.sh
-       git checkout $1
+       cd $TOPDIR
+       switch_branches $1 z_patches
        ;;
     S) ./patches_apply.sh  
        ;;
@@ -24,6 +45,9 @@ switch_zpatch() {
   cd $TOPDIR
 }
 
+#
+# Main run
+#
 case "$1" in
   treble)
     BRANCH1="lin-16.0-treble"

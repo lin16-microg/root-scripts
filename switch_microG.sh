@@ -102,6 +102,7 @@ switch_branches $BRANCH3 packages/apps/Dialer
 switch_branches $BRANCH3 packages/apps/Jelly
 switch_branches $BRANCH1 packages/apps/LineageParts
 switch_branches $BRANCH1 packages/apps/Settings
+switch_branches $BRANCH3 packages/apps/Trebuchet
 switch_branches $BRANCH3 packages/services/Telecomm
 switch_branches $BRANCH2 packages/services/Telephony
 switch_branches $BRANCH1 system/bt

@@ -92,7 +92,7 @@ switch_zpatch $BRANCH1 R
 
 switch_branches $BRANCH1 build/make
 switch_branches $BRANCH2 external/selinux
-switch_branches $BRANCH2 frameworks/av
+switch_branches $BRANCH1 frameworks/av
 switch_branches $BRANCH1 frameworks/base
 switch_branches $BRANCH1 frameworks/native
 switch_branches $BRANCH1 frameworks/opt/net/wifi
@@ -107,6 +107,7 @@ switch_branches $BRANCH3 packages/services/Telecomm
 switch_branches $BRANCH2 packages/services/Telephony
 switch_branches $BRANCH1 system/bt
 switch_branches $BRANCH1 system/core
+switch_branches $BRANCH3 system/media
 switch_branches $BRANCH2 system/netd
 switch_branches $BRANCH1 system/sepolicy
 switch_branches $BRANCH2 system/vold

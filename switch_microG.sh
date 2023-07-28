@@ -21,7 +21,7 @@ switch_branches() {
   fi
   if [ -n "$(git branch --list $1)" ]; then
     git checkout $1
-    git pull $REMOTE $1
+    git pull $REMOTE $1 --ff-only
   else
     git fetch $REMOTE $1
     git checkout -b $1 $REMOTE/$1
@@ -39,7 +39,7 @@ switch_zpatch() {
        cd $TOPDIR
        switch_branches $1 z_patches
        ;;
-    S) ./patches_apply.sh  
+    S) ./patches_apply.sh
        ;;
   esac
   cd $TOPDIR
@@ -56,28 +56,28 @@ case "$1" in
     BRANCH4="lin-16.0-microG"
     PATCHV="S"
     ;;
-  microG) 
+  microG)
     BRANCH1="lin-16.0-microG"
     BRANCH2="lineage-16.0"
     BRANCH3="lin-16.0-microG"
     BRANCH4="lin-16.0-microG"
     PATCHV="S"
     ;;
-  default) 
+  default)
     BRANCH1="lineage-16.0"
     BRANCH2="lineage-16.0"
     BRANCH3="lineage-16.0"
     BRANCH4="lineage-16.0"
     PATCHV="S"
     ;;
-  reference) 
+  reference)
     BRANCH1="lineage-16.0"
     BRANCH2="lineage-16.0"
     BRANCH3="lineage-16.0"
     BRANCH4="changelog"
     PATCHV="N"
     ;;
-  *) 
+  *)
     echo "usage: switch_microg.sh default | microG | treble | reference"
     echo "-"
     echo "  default   - LineageOS 16.0"
@@ -85,7 +85,7 @@ case "$1" in
     echo "  treble    - Treble GSI build"
     echo "  reference - 100% LineageOS 16.0 (no patches - for 'repo sync')"
     exit
-    ;;   
+    ;;
 esac
 
 switch_zpatch $BRANCH1 R
@@ -102,6 +102,7 @@ switch_branches $BRANCH3 packages/apps/Contacts
 switch_branches $BRANCH3 packages/apps/Dialer
 switch_branches $BRANCH3 packages/apps/Jelly
 switch_branches $BRANCH1 packages/apps/LineageParts
+switch_branches $BRANCH3 packages/apps/Nfc
 switch_branches $BRANCH1 packages/apps/Settings
 switch_branches $BRANCH3 packages/apps/Trebuchet
 switch_branches $BRANCH3 packages/services/Telecomm
@@ -118,4 +119,3 @@ switch_branches $BRANCH1 .repo/local_manifests
 switch_branches $BRANCH4 OTA
 
 switch_zpatch $BRANCH1 $PATCHV
-

@@ -108,6 +108,7 @@ switch_branches $BRANCH3 packages/apps/Trebuchet
 switch_branches $BRANCH3 packages/services/Telecomm
 switch_branches $BRANCH2 packages/services/Telephony
 switch_branches $BRANCH1 system/bt
+switch_branches $BRANCH3 system/ca-certificates
 switch_branches $BRANCH1 system/core
 switch_branches $BRANCH3 system/media
 switch_branches $BRANCH2 system/netd

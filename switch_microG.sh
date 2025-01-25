@@ -91,6 +91,7 @@ esac
 switch_zpatch $BRANCH1 R
 
 switch_branches $BRANCH1 build/make
+switch_branches $BRANCH3 external/freetype
 switch_branches $BRANCH2 external/selinux
 switch_branches $BRANCH1 frameworks/av
 switch_branches $BRANCH1 frameworks/base

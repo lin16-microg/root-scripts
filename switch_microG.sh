@@ -54,6 +54,7 @@ case "$1" in
     BRANCH2="lin-16.0-treble"
     BRANCH3="lin-16.0-microG"
     BRANCH4="lin-16.0-microG"
+    BRANCH5="EVA"
     PATCHV="S"
     ;;
   microG)
@@ -61,6 +62,7 @@ case "$1" in
     BRANCH2="lineage-16.0"
     BRANCH3="lin-16.0-microG"
     BRANCH4="lin-16.0-microG"
+    BRANCH5="master"
     PATCHV="S"
     ;;
   default)
@@ -68,6 +70,7 @@ case "$1" in
     BRANCH2="lineage-16.0"
     BRANCH3="lineage-16.0"
     BRANCH4="lineage-16.0"
+    BRANCH5="master"
     PATCHV="S"
     ;;
   reference)
@@ -75,6 +78,7 @@ case "$1" in
     BRANCH2="lineage-16.0"
     BRANCH3="lineage-16.0"
     BRANCH4="changelog"
+    BRANCH5="master"
     PATCHV="N"
     ;;
   *)
@@ -99,6 +103,7 @@ switch_branches $BRANCH1 frameworks/native
 switch_branches $BRANCH1 frameworks/opt/net/wifi
 switch_branches $BRANCH2 frameworks/opt/telephony
 switch_branches $BRANCH1 lineage-sdk
+switch_branches $BRANCH5 prebuilts/prebuiltapks
 switch_branches $BRANCH3 packages/apps/Contacts
 switch_branches $BRANCH3 packages/apps/Dialer
 switch_branches $BRANCH3 packages/apps/Jelly
